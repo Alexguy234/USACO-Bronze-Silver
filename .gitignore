@@ -1,6 +1,6 @@
 *.in
 *.out
-/.vscode/
+**/.vscode/
 *.exe
 *.o
 **/*.dSYM/
