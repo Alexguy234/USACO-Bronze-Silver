@@ -1,0 +1,64 @@
+{
+    "env": {
+        "myIncludePath": [
+            "${workspaceFolder}/include",
+            "${workspaceFolder}/src"
+        ],
+        "myDefines": [
+            "DEBUG",
+            "MY_FEATURE=1"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Mac",
+            "compilerPath": "/usr/bin/clang",
+            "intelliSenseMode": "macos-clang-x64",
+            "includePath": ["${myIncludePath}"],
+            "defines": ["${myDefines}"],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "macFrameworkPath": ["/System/Library/Frameworks", "/Library/Frameworks"],
+            "browse": {
+              "path": ["${myIncludePath}", "${workspaceFolder}"]
+            }
+          }
+        // {
+        //     "name": "Mac",
+        //     "includePath": [
+        //         "/Users/Alex/Documents/100 Probs Challenge Bronze 2024/**"
+        //     ],
+        //     "defines": [],
+        //     "macFrameworkPath": [],
+        //     "compilerPath": "/usr/bin/clang++",
+        //     "cStandard": "c23",
+        //     "cppStandard": "c++23",
+        //     "compilerPathInCppPropertiesJson": "/usr/bin/gcc",
+        //     "mergeConfigurations": false,
+        //     "browse": {
+        //         "path": [
+        //             "/Users/Alex/Documents/100 Probs Challenge Bronze 2024/**",
+        //             "${workspaceFolder}"
+        //         ],
+        //         "limitSymbolsToIncludedHeaders": true
+        //     }
+        // },
+        // {
+        //     "name": "hello",
+        //     "includePath": [
+        //         "${workspaceFolder}/**"
+        //     ],
+        //     "defines": [],
+        //     "macFrameworkPath": []
+        // },
+        // {
+        //     "name": "hola",
+        //     "includePath": [
+        //         "${workspaceFolder}/**"
+        //     ],
+        //     "defines": [],
+        //     "macFrameworkPath": []
+        // }
+    ],
+    "version": 4
+}
