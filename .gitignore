@@ -3,4 +3,40 @@
 /.vscode/
 *.exe
 *.o
-/*.dSYM/
+**/*.dSYM/
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.o
+*.obj
+*.slo
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+*.la
+*.lai
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Common Build Directories
+build/
+Build/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
