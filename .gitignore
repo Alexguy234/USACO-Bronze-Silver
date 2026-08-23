@@ -40,3 +40,5 @@ bin/
 out/
 CMakeFiles/
 CMakeCache.txt
+
+AABITS.cpp
