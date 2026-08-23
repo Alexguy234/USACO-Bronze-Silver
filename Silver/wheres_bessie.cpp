@@ -20,15 +20,17 @@ struct Rectangle {
     int x1, y1, x2, y2;
 };
 int main(){
+    ifstream fin ("where.in");
+    ofstream fout ("where.out");
     int n;
-    cin >> n;
+    fin >> n;
     int dir_x[] = {1, -1, 0, 0};
     int dir_y[] = {0, 0, 1, -1};
     vector<vector<char>> image(n, vector<char> (n));
     char temp;
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
-            cin >> temp;
+            fin >> temp;
             image[i][j] = temp;
         }
     }
@@ -97,5 +99,5 @@ int main(){
 
         if (!contained) ans++;
     }
-    cout << ans << endl;
+    fout << ans << endl;
 }
