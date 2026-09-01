@@ -22,16 +22,18 @@ void dfs(int step, vector<int>& sizes1, vector<int>& sizes2, int tank1, int tank
     }
     if (step % 2 == 0){
         for (int i = 0; i < sizes1.size(); i++){
-            vector<int> copy = sizes1;
+            vector<int> copy = sizes2, copy2 = sizes1;
             copy.push_back(sizes1[i]);
-            dfs(step + 1, sizes1, copy, tank1 - sizes1[i], tank2 + sizes1[i]);
+            copy2.erase(copy2.begin() + i);
+            dfs(step + 1, copy2, copy, tank1 - sizes1[i], tank2 + sizes1[i]);
         }
     }
     else{
         for (int i = 0; i < sizes2.size(); i++){
-            vector<int> copy = sizes2;
+            vector<int> copy = sizes1, copy2 = sizes2;
             copy.push_back(sizes2[i]);
-            dfs(step + 1, copy, sizes2, tank1 + sizes2[i], tank2 - sizes2[i]);
+            copy2.erase(copy2.begin() + i);
+            dfs(step + 1, copy, copy2, tank1 + sizes2[i], tank2 - sizes2[i]);
         }
     }
 }
