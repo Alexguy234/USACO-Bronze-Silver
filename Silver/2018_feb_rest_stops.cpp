@@ -17,30 +17,32 @@ using namespace std;
 int main(){
     ifstream fin ("reststops.in");
     ofstream fout ("reststops.out");
-    int l, n, rf, rb;
+    long long l, n, rf, rb;
     fin >> l >> n >> rf >> rb;
-    vector<pair<int, int>> stops(n);
-    int max_pos = 0;
-    for (int i = 0; i < n; i++){
+    vector<pair<long long, long long>> stops(n);
+    long long max_pos = 0;
+    for (long long i = 0; i < n; i++){
         fin >> stops[i].first >> stops[i].second;
     }
-    vector<int> stops_to_use;
-    int best = -1;
-    for (int i = n - 1; i >= 0; i--){
+    vector<long long> stops_to_use;
+    long long best = -1;
+    for (long long i = n - 1; i >= 0; i--){
         if (stops[i].second > best){
             best = stops[i].second;
             stops_to_use.push_back(i);
         }
     }
     reverse(stops_to_use.begin(), stops_to_use.end());
-    int ans = 0, prev_pos = -1;
-    for (int i : stops_to_use){
+    long long ans = 0, prev_pos = -1;
+    for (long long i : stops_to_use){
         if (prev_pos == -1){
             ans += stops[i].first * (rf - rb) * stops[i].second;
             prev_pos = stops[i].first;
         }
         else{
-            ans += (stops[i].first - prev_pos) * (rf - rb) * stops[i].second;
+            long long temp = ((stops[i].first - prev_pos) * (rf - rb) * stops[i].second);
+            ans += temp;
+            prev_pos = stops[i].first;
         }
     }
     fout << ans << endl;
